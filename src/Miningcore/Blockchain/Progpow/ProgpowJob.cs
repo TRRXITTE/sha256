@@ -197,7 +197,7 @@ public class ProgpowJob : BitcoinJob
         this.JobId = jobId;
 
         var coinbaseString = !string.IsNullOrEmpty(cc.PaymentProcessing?.CoinbaseString) ?
-            cc.PaymentProcessing?.CoinbaseString.Trim() : "Miningcore";
+            cc.PaymentProcessing?.CoinbaseString.Trim() : "sha256 TRRXITTE";
 
         if(!string.IsNullOrEmpty(coinbaseString))
             this.scriptSigFinalBytes = new Script(Op.GetPushOp(Encoding.UTF8.GetBytes(coinbaseString))).ToBytes();

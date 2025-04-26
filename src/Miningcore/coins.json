@@ -28,6 +28,122 @@
         "explorerTxLink": "https://explorer.trrxitte.com/tx/{0}",
         "explorerAccountLink": "https://explorer.trrxitte.com/address/{0}"
     },
+    "space": {
+        "name": "MicroVisionChain",
+        "canonicalName": "MicroVisionChain",
+        "symbol": "SPACE",
+        "family": "bitcoin",
+        "website": "https://www.microvisionchain.com/",
+        "market": "",
+        "twitter": "https://twitter.com/mvcglobal",
+        "telegram": "https://t.me/mvcofficial",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "https://www.mvcscan.com/block/$hash$",
+        "explorerTxLink": "https://www.mvcscan.com/tx/{0}",
+        "explorerAccountLink": "https://www.mvcscan.com/address/{0}"
+    },
+    "atom": {
+        "name": "Bitcoin Atom",
+        "canonicalName": "Bitcoin Atom",
+        "symbol": "BCA",
+        "family": "bitcoin",
+        "website": "https://bitcoinatom.io/",
+        "market": "",
+        "twitter": "https://x.com/atombitcoin",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "https://bitcoinatom.net/block/$hash$",
+        "explorerTxLink": "https://bitcoinatom.net/tx/{0}",
+        "explorerAccountLink": "https://bitcoinatom.net/address/{0}"
+    },
+    "aurum": {
+        "name": "Aurum Crypto Gold",
+        "canonicalName": "Aurum Crypto Gold",
+        "symbol": "ACG",
+        "family": "bitcoin",
+        "website": "https://aurumcrypto.gold/",
+        "market": "",
+        "twitter": "https://x.com/aurumcryptogold",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "https://blocks.aurumcrypto.gold/block/$hash$",
+        "explorerTxLink": "https://blocks.aurumcrypto.gold/tx/{0}",
+        "explorerAccountLink": "https://blocks.aurumcrypto.gold/address/{0}"
+    },
+    "bitcoinoil": {
+        "name": "Bitcoin Oil",
+        "canonicalName": "Bitcoin Oil",
+        "symbol": "BTCO",
+        "family": "bitcoin",
+        "website": "https://bitcoinoil.org/",
+        "market": "",
+        "twitter": "https://x.com/bitcoin_oil",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "https://btco-explorer.pool.sexy/block/$hash$",
+        "explorerTxLink": "https://btco-explorer.pool.sexy/tx/{0}",
+        "explorerAccountLink": "https://btco-explorer.pool.sexy/address/{0}"
+    },
     "XBT": {
         "name": "Bitcoin classic",
         "canonicalName": "Bitcoin classic",
@@ -56,6 +172,35 @@
         "explorerBlockLink": "https://xbt-explorer.s3na.xyz/block/$hash$",
         "explorerTxLink": "https://xbt-explorer.s3na.xyz/tx/{0}",
         "explorerAccountLink": "https://xbt-explorer.s3na.xyz/address/{0}"
+    },
+    "fractalbitcoin": {
+        "name": "Fractal Bitcoin",
+        "canonicalName": "Fractal Bitcoin",
+        "symbol": "FB",
+        "family": "bitcoin",
+        "website": "https://fractalbitcoin.io/",
+        "market": "",
+        "twitter": "https://x.com/fractal_bitcoin",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "https://mempool.fractalbitcoin.io/de/block/$hash$",
+        "explorerTxLink": "https://mempool.fractalbitcoin.io/de/tx/{0}",
+        "explorerAccountLink": "https://mempool.fractalbitcoin.io/de/address/{0}"
     },
     "5gcash": {
         "name": "5G Cash",
@@ -935,6 +1080,108 @@
         "explorerBlockLink": "https://dogechain.info/block/$height$",
         "explorerTxLink": "https://dogechain.info/tx/{0}",
         "explorerAccountLink": "https://dogechain.info/address/{0}"
+    },
+    "dogecoinev": {
+        "name": "Dogecoin EV",
+        "canonicalName": "Dogecoin EV",
+        "symbol": "DEV",
+        "family": "bitcoin",
+        "website": "https://dogecoinev.com/",
+        "market": "",
+        "twitter": "https://x.com/DogecoinEV_",
+        "telegram": "https://t.me/DogeElonVision",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "scrypt",
+            "args": [
+                1024,
+                1
+            ]
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "coinbaseMinConfimations": 251,
+        "explorerBlockLink": "https://explorer.dogecoinev.com/block/$height$",
+        "explorerTxLink": "https://explorer.dogecoinev.com/tx/{0}",
+        "explorerAccountLink": "https://explorer.dogecoinev.com/address/{0}"
+    },
+    "pepecoin": {
+        "name": "Pepecoin",
+        "canonicalName": "Pepecoin",
+        "symbol": "PEP",
+        "family": "bitcoin",
+        "website": "https://pepecoin.org/",
+        "market": "",
+        "twitter": "https://x.com/PepecoinNetwork",
+        "telegram": "https://t.me/PepecoinGroup",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "scrypt",
+            "args": [
+                1024,
+                1
+            ]
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "coinbaseMinConfimations": 251,
+        "explorerBlockLink": "https://pepeblocks.com/block/$height$",
+        "explorerTxLink": "https://pepeblocks.com/tx/{0}",
+        "explorerAccountLink": "https://pepeblocks.com/address/{0}"
+    },
+        "bells": {
+        "name": "Bellscoin",
+        "canonicalName": "Bellscoin",
+        "symbol": "BEL",
+        "family": "bitcoin",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "scrypt",
+            "args": [
+                1024,
+                1
+            ]
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "coinbaseMinConfimations": 251,
+        "explorerBlockLink": "https://bells.quark.blue/block/$height$",
+        "explorerTxLink": "https://bells.quark.blue/tx/{0}",
+        "explorerAccountLink": "https://bells.quark.blue/address/{0}"
     },
     "ecash": {
         "name": "eCash",

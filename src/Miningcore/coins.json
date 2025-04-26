@@ -202,6 +202,35 @@
         "explorerTxLink": "https://mempool.fractalbitcoin.io/de/tx/{0}",
         "explorerAccountLink": "https://mempool.fractalbitcoin.io/de/address/{0}"
     },
+    "frencoin": {
+        "name": "Frencoin",
+        "symbol": "FREN",
+        "family": "progpow",
+        "website": "https://frencoin.org/",
+        "market": "https://coinmarketcap.com/currencies/frencoin/",
+        "twitter": "https://twitter.com/Frencoin",
+        "telegram": "https://t.me/FrencoinCommunity",
+        "discord": "https://discord.gg/frencoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "shareMultiplier": 1,
+        "progpower": "kawpow",
+        "explorerBlockLink": "https://explorer.frencoin.org/block/$hash$",
+        "explorerTxLink": "https://explorer.frencoin.org/transaction/{0}",
+        "explorerAccountLink": "https://explorer.frencoin.org/address/{0}"
+    },
     "5gcash": {
         "name": "5G Cash",
         "symbol": "VGC",
@@ -1149,7 +1178,7 @@
         "explorerTxLink": "https://pepeblocks.com/tx/{0}",
         "explorerAccountLink": "https://pepeblocks.com/address/{0}"
     },
-        "bells": {
+    "bells": {
         "name": "Bellscoin",
         "canonicalName": "Bellscoin",
         "symbol": "BEL",
@@ -2642,7 +2671,11 @@
         },
         "blockHasher": {
             "hash": "reverse",
-            "args": [ { "hash": "sha512/256d" } ]
+            "args": [
+                {
+                    "hash": "sha512/256d"
+                }
+            ]
         },
         "explorerBlockLink": "https://explorer.radiantblockchain.org/block-height/$height$",
         "explorerTxLink": "https://explorer.radiantblockchain.org/tx/{0}",
@@ -2857,22 +2890,26 @@
         "explorerAccountLink": "https://xplore.satoverse.io/address/{0}"
     },
     "novo": {
-      "name": "Novo",
-      "symbol": "NOVO",
-      "family": "bitcoin",
-      "coinbaseHasher": {
-        "hash": "sha256d"
-      },
-      "headerHasher": {
-        "hash": "sha256dt"
-      },
-      "blockHasher": {
-        "hash": "reverse",
-        "args": [ { "hash": "sha256dt" } ]
-      },
-      "explorerBlockLink": "https://explorer.novochain.ovh/block/$height$",
-      "explorerTxLink": "https://explorer.novochain.ovh/tx/{0}",
-      "explorerAccountLink": "https://explorer.novochain.ovh/address/{0}"
+        "name": "Novo",
+        "symbol": "NOVO",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256dt"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256dt"
+                }
+            ]
+        },
+        "explorerBlockLink": "https://explorer.novochain.ovh/block/$height$",
+        "explorerTxLink": "https://explorer.novochain.ovh/tx/{0}",
+        "explorerAccountLink": "https://explorer.novochain.ovh/address/{0}"
     },
     "pulsar": {
         "name": "Pulsar",
@@ -2890,7 +2927,11 @@
         },
         "blockHasher": {
             "hash": "reverse",
-            "args": [ { "hash": "minotaurx" } ]
+            "args": [
+                {
+                    "hash": "minotaurx"
+                }
+            ]
         },
         "isPseudoPoS": true,
         "explorerBlockLink": "https://explorer.pulsarcoin.org/block/?blockheight=$height$",
@@ -2915,7 +2956,11 @@
         },
         "blockHasher": {
             "hash": "reverse",
-            "args": [ { "hash": "yespower" } ]
+            "args": [
+                {
+                    "hash": "yespower"
+                }
+            ]
         },
         "hasMasterNodes": true,
         "shareMultiplier": 65536,
@@ -2957,7 +3002,6 @@
         "explorerTxLink": "https://explorer.bitoreum.org/tx/{0}",
         "explorerAccountLink": "https://explorer.bitoreum.org/address/{0}"
     },
-
     "rosecoin": {
         "name": "Rosecoin",
         "symbol": "ROC",
@@ -5015,7 +5059,7 @@
         "explorerBlockLink": "https://www.exploremonero.com/block/$height$",
         "explorerTxLink": "https://www.exploremonero.com/transaction/{0}"
     },
-     "conceal": {
+    "conceal": {
         "name": "Conceal",
         "canonicalName": "Conceal",
         "symbol": "CCX",
@@ -5090,7 +5134,7 @@
         "explorerBlockLink": "https://explorer.zephyrprotocol.com/block/$height$",
         "explorerTxLink": "https://explorer.zephyrprotocol.com/tx/{0}"
     },
-     "zano": {
+    "zano": {
         "name": "Zano",
         "canonicalName": "Zano",
         "symbol": "ZANO",
@@ -5227,7 +5271,7 @@
         "explorerAccountLink": "https://blockscout.etherone.one/address/{0}",
         "ethasher": "ethash"
     },
-        "octaspace": {
+    "octaspace": {
         "name": "OctaSpace",
         "canonicalName": "Octa.Space",
         "symbol": "OCTA",
@@ -5379,7 +5423,7 @@
         "addressBech32PrefixTestnet": "bricstest",
         "explorerBlockLink": "https://explorer.bricspro.site/blocks/$hash$",
         "explorerTxLink": "https://explorer.bricspro.site/txs/{0}",
-        "explorerAccountLink": "https://explorer.bricspro.site/addresses/{0}"   
+        "explorerAccountLink": "https://explorer.bricspro.site/addresses/{0}"
     },
     "bugna": {
         "name": "Bugna Network",
@@ -5469,7 +5513,7 @@
         "addressBech32PrefixTestnet": "kasv2test",
         "explorerBlockLink": "https://explorer.kaspa-v2.services/blocks/$hash$",
         "explorerTxLink": "https://explorer.kaspa-v2.services/txs/{0}",
-        "explorerAccountLink": "https://explorer.kaspa-v2.services/addresses/{0}"   
+        "explorerAccountLink": "https://explorer.kaspa-v2.services/addresses/{0}"
     },
     "kaspaclassic": {
         "name": "Kaspa Classic",

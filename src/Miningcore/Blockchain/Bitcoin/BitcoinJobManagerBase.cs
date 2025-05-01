@@ -190,54 +190,35 @@ public abstract class BitcoinJobManagerBase<TJob> : JobManagerBase<TJob>
             .Publish()
             .RefCount();
     }
-protected virtual async Task ShowDaemonSyncProgressAsync(CancellationToken ct)
-{
-    if(hasLegacyDaemon)
+
+    protected virtual async Task ShowDaemonSyncProgressAsync(CancellationToken ct)
     {
-        await ShowDaemonSyncProgressLegacyAsync(ct);
-        return;
-    }
-
-    var info = await rpc.ExecuteAsync<BlockchainInfo>(logger, BitcoinCommands.GetBlockchainInfo, ct);
-
-    if(info != null && info.Response != null)
-    {
-        var blockCount = info.Response.Blocks;
-        var headers = info.Response.Headers;
-        var isSynced = !info.Response.InitialBlockDownload;
-
-        if(blockCount.HasValue)
+        if(hasLegacyDaemon)
         {
-            var peerInfo = await rpc.ExecuteAsync<PeerInfo[]>(logger, BitcoinCommands.GetPeerInfo, ct);
-            var peers = peerInfo.Response ?? new PeerInfo[0];
+            await ShowDaemonSyncProgressLegacyAsync(ct);
+            return;
+        }
 
-            var totalBlocks = headers.HasValue ? headers.Value : blockCount.Value;
-            if(peers.Any())
-            {
-                totalBlocks = Math.Max(totalBlocks, peers.Max(y => y.StartingHeight));
-            }
+        var info = await rpc.ExecuteAsync<BlockchainInfo>(logger, BitcoinCommands.GetBlockchainInfo, ct);
 
-            var percent = totalBlocks > 0 ? (double) blockCount / totalBlocks * 100 : 0;
+        if(info != null)
+        {
+            var blockCount = info.Response?.Blocks;
 
-            if(isSynced)
+            if(blockCount.HasValue)
             {
-                logger.Info(() => $"Daemon is fully synced ({percent:0.00}% of blockchain, {blockCount}/{totalBlocks} blocks) with {peers.Length} peers");
-            }
-            else
-            {
-                logger.Info(() => $"Daemon has downloaded {percent:0.00}% of blockchain ({blockCount}/{totalBlocks} blocks) from {peers.Length} peers");
+                // get list of peers and their highest block height to compare to ours
+                var peerInfo = await rpc.ExecuteAsync<PeerInfo[]>(logger, BitcoinCommands.GetPeerInfo, ct);
+                var peers = peerInfo.Response;
+
+                var totalBlocks = Math.Max(info.Response.Headers, peers.Any() ? peers.Max(y => y.StartingHeight) : 0);
+
+                var percent = totalBlocks > 0 ? (double) blockCount / totalBlocks * 100 : 0;
+                logger.Info(() => $"Daemon has downloaded {percent:0.00}% of blockchain from {peers.Length} peers");
             }
         }
-        else
-        {
-            logger.Warn(() => $"Unable to retrieve block count from daemon");
-        }
     }
-    else
-    {
-        logger.Warn(() => $"Failed to retrieve blockchain info from daemon");
-    }
-}
+
     private async Task UpdateNetworkStatsAsync(CancellationToken ct)
     {
         try

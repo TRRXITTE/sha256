@@ -10,5 +10,4 @@ public class BlockchainInfo
     public long MedianTime { get; set; }
     public double VerificationProgress { get; set; }
     public bool Pruned { get; set; }
-    public bool initialblockdownload { get; set; }
 }

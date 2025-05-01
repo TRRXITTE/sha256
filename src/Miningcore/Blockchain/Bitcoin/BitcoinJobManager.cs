@@ -56,38 +56,59 @@ public class BitcoinJobManager : BitcoinJobManagerBase<BitcoinJob>
         return result;
     }
     
-    protected override async Task EnsureDaemonsSynchedAsync(CancellationToken ct)
-    {
-        using var timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
-
-        var syncPendingNotificationShown = false;
-
-        do
+protected override async Task EnsureDaemonsSynchedAsync(CancellationToken ct)
         {
-            var response = await rpc.ExecuteAsync<BlockTemplate>(logger,
-                BitcoinCommands.GetBlockTemplate, ct, GetBlockTemplateParams());
+            using var timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
 
-            var isSynched = response.Error == null;
+            var syncPendingNotificationShown = false;
 
-            if(isSynched)
+            do
             {
-                logger.Info(() => "All daemons synched with blockchain");
-                break;
-            }
-            else
-            {
-                logger.Debug(() => $"Daemon reports error: {response.Error?.Message}");
-            }
+                // Check blockchain sync status
+                var blockchainInfo = await rpc.ExecuteAsync<BlockchainInfo>(logger, BitcoinCommands.GetBlockchainInfo, ct);
+                if (blockchainInfo != null && blockchainInfo.Response != null && !blockchainInfo.Response.initialblockdownload)
+                {
+                    // Blockchain is synced, check peers
+                    var peerInfo = await rpc.ExecuteAsync<PeerInfo[]>(logger, BitcoinCommands.GetPeerInfo, ct);
+                    var peers = peerInfo.Response ?? new PeerInfo[0];
 
-            if(!syncPendingNotificationShown)
-            {
-                logger.Info(() => "Daemon is still syncing with network. Manager will be started once synced.");
-                syncPendingNotificationShown = true;
-            }
+                    if (peers.Length == 0)
+                    {
+                        logger.Warn(() => $"No peers connected, but blockchain is synced. Proceeding to request block template.");
+                    }
+                    else
+                    {
+                        logger.Info(() => $"Connected to {peers.Length} peers.");
+                    }
 
-            await ShowDaemonSyncProgressAsync(ct);
-        } while(await timer.WaitForNextTickAsync(ct));
-    }
+                    // Try getblocktemplate
+                    var response = await rpc.ExecuteAsync<BlockTemplate>(logger,
+                        BitcoinCommands.GetBlockTemplate, ct, GetBlockTemplateParams());
+
+                    if (response.Error == null)
+                    {
+                        logger.Info(() => "All daemons synched with blockchain");
+                        break;
+                    }
+                    else
+                    {
+                        logger.Debug(() => $"Daemon reports error: {response.Error?.Message}");
+                    }
+                }
+                else
+                {
+                    logger.Debug(() => $"Daemon is not synced: initialblockdownload={(blockchainInfo?.Response?.initialblockdownload.ToString() ?? "unknown")}");
+                }
+
+                if (!syncPendingNotificationShown)
+                {
+                    logger.Info(() => "Daemon is still syncing with network. Manager will be started once synced.");
+                    syncPendingNotificationShown = true;
+                }
+
+                await ShowDaemonSyncProgressAsync(ct);
+            } while (await timer.WaitForNextTickAsync(ct));
+        }
 
     protected async Task<RpcResponse<BlockTemplate>> GetBlockTemplateAsync(CancellationToken ct)
     {

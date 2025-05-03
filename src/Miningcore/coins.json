@@ -1,32 +1,21 @@
 {
-    "trrxitte": {
-        "name": "TRRXITTE Bitcoin",
-        "canonicalName": "TRRXITTE Bitcoin",
-        "symbol": "TRRXITTE",
-        "family": "bitcoin",
-        "website": "https://www.btc.trrxitte.com/",
-        "market": "https://www.coingecko.com/en/coins/trrxitte",
+    "trrxitte-ethereum": {
+        "name": "TRRXITTE Ethereum",
+        "canonicalName": "TRRXITTE Ethereum",
+        "symbol": "ETX",
+        "family": "ethereum",
+        "website": "https://ethereum.trrxitte.com/",
+        "market": "",
         "twitter": "https://x.com/TRRXITTE",
         "telegram": "",
-        "discord": "",
-        "coinbaseHasher": {
-            "hash": "sha256d"
+        "discord": "https://discord.gg/Zf76MhwhBZ",
+        "explorerBlockLinks": {
+           "block": "https://etx.trrxitte.com/block/$height$",
+           "uncle": "https://etx.trrxitte.com/uncle/$height$"
         },
-        "headerHasher": {
-            "hash": "sha256d"
-        },
-        "blockHasher": {
-            "hash": "reverse",
-            "args": [
-                {
-                    "hash": "sha256d"
-                }
-            ]
-        },
-        "coinbaseIgnoreAuxFlags": true,
-        "explorerBlockLink": "https://explorer.trrxitte.com/block/$hash$",
-        "explorerTxLink": "https://explorer.trrxitte.com/tx/{0}",
-        "explorerAccountLink": "https://explorer.trrxitte.com/address/{0}"
+        "explorerTxLink": "https://etx.trrxitte.com/tx/{0}",
+        "explorerAccountLink": "https://etx.trrxitte.com/address/{0}",
+        "ethasher": "ethash"
     },
     "space": {
         "name": "MicroVisionChain",

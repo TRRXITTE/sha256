@@ -10,11 +10,11 @@
         "telegram": "",
         "discord": "https://discord.gg/Zf76MhwhBZ",
         "explorerBlockLinks": {
-           "block": "https://etx.trrxitte.com/block/$height$",
-           "uncle": "https://etx.trrxitte.com/uncle/$height$"
+           "block": "https://eth-explorer.trrxitte.com/block/$height$",
+           "uncle": "https://eth-explorer.trrxitte.com/uncle/$height$"
         },
-        "explorerTxLink": "https://etx.trrxitte.com/tx/{0}",
-        "explorerAccountLink": "https://etx.trrxitte.com/address/{0}",
+        "explorerTxLink": "https://eth-explorer.trrxitte.com/tx/{0}",
+        "explorerAccountLink": "https://eth-explorer.trrxitte.com/address/{0}",
         "ethasher": "ethash"
     },
     "space": {

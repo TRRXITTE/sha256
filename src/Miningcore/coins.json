@@ -4,17 +4,17 @@
         "canonicalName": "TRRXITTE Ethereum",
         "symbol": "ETX",
         "family": "ethereum",
-        "website": "https://ethereum.trrxitte.com/",
-        "market": "",
+        "website": "https://trrxitte.com/ethereum",
+        "market": "https://bitstorage.finance/spot/trading/ETXUSDT?interface=classic",
         "twitter": "https://x.com/TRRXITTE",
-        "telegram": "",
+        "telegram": "https://t.me/trrxittetx",
         "discord": "https://discord.gg/Zf76MhwhBZ",
         "explorerBlockLinks": {
-           "block": "https://eth-explorer.trrxitte.com/block/$height$",
-           "uncle": "https://eth-explorer.trrxitte.com/uncle/$height$"
+           "block": "https://explorer.trrxitte.com/block/$height$",
+           "uncle": "https://explorer.trrxitte.com/uncle/$height$"
         },
-        "explorerTxLink": "https://eth-explorer.trrxitte.com/tx/{0}",
-        "explorerAccountLink": "https://eth-explorer.trrxitte.com/address/{0}",
+        "explorerTxLink": "https://explorer.trrxitte.com/tx/{0}",
+        "explorerAccountLink": "https://explorer.trrxitte.com/address/{0}",
         "ethasher": "ethash"
     },
     "space": {
@@ -134,12 +134,12 @@
         "explorerAccountLink": "https://btco-explorer.pool.sexy/address/{0}"
     },
     "XBT": {
-        "name": "Bitcoin classic",
-        "canonicalName": "Bitcoin classic",
+        "name": "Bitcoin Classic",
+        "canonicalName": "Bitcoin Classic",
         "symbol": "XBT",
         "family": "bitcoin",
         "website": "https://xbtclassic.com/",
-        "market": "https://mecacex.com/market/XBTUSDT",
+        "market": "https://nonkyc.io/market/XBT_USDT",
         "twitter": "https://x.com/xbtproject",
         "telegram": "",
         "discord": "",
@@ -161,6 +161,35 @@
         "explorerBlockLink": "https://xbt-explorer.s3na.xyz/block/$hash$",
         "explorerTxLink": "https://xbt-explorer.s3na.xyz/tx/{0}",
         "explorerAccountLink": "https://xbt-explorer.s3na.xyz/address/{0}"
+    },
+    "BC2": {
+        "name": "Bitcoin II",
+        "canonicalName": "Bitcoin II",
+        "symbol": "BC2",
+        "family": "bitcoin",
+        "website": "https://bitcoin-ii.org/",
+        "market": "https://nonkyc.io/market/BC2_USDT",
+        "twitter": "https://x.com/BitcoinIIOrg",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "https://bitcoinii.ddns.net/block/$hash$",
+        "explorerTxLink": "https://bitcoinii.ddns.net/tx/{0}",
+        "explorerAccountLink": "https://bitcoinii.ddns.net/address/{0}"
     },
     "fractalbitcoin": {
         "name": "Fractal Bitcoin",
@@ -5676,5 +5705,150 @@
         "explorerBlockLink": "https://explorer.xelis.io/blocks/$height$",
         "explorerTxLink": "https://explorer.xelis.io/txs/{0}",
         "explorerAccountLink": "https://explorer.xelis.io/accounts/{0}"
+    },
+    "blackgold": {
+        "name": "Blackgold",
+        "canonicalName": "Blackgold",
+        "symbol": "BGOLD",
+        "family": "bitcoin",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "",
+        "explorerTxLink": "",
+        "explorerAccountLink": ""
+    },
+    "plexhive": {
+        "name": "PlexHive",
+        "canonicalName": "PlexHive",
+        "symbol": "PLEX",
+        "family": "bitcoin",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "",
+        "explorerTxLink": "",
+        "explorerAccountLink": ""
+    },
+    "palladium": {
+        "name": "Palladium",
+        "canonicalName": "Palladium",
+        "symbol": "PLD",
+        "family": "bitcoin",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "",
+        "explorerTxLink": "",
+        "explorerAccountLink": ""
+    },
+    "bitcoin-silver": {
+        "name": "Bitcoin Silver",
+        "canonicalName": "Bitcoin Silver",
+        "symbol": "BTCS",
+        "family": "bitcoin",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "",
+        "explorerTxLink": "",
+        "explorerAccountLink": ""
+    },
+    "bitcoin-purple": {
+        "name": "Bitcoin Purple",
+        "canonicalName": "Bitcoin Purple",
+        "symbol": "BTCP",
+        "family": "bitcoin",
+        "website": "",
+        "market": "",
+        "twitter": "",
+        "telegram": "",
+        "discord": "",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "",
+        "explorerTxLink": "",
+        "explorerAccountLink": ""
     }
 }
